@@ -1,42 +1,38 @@
-
+import java.util.Scanner;
+//this->it is keyword which reffers current object 
+//used to  differenciate between local and instance variable
+//to call constructor
 public class Employee {
- double salary;
- private String name;
- 
- 
- void setData(String name1,double salary1)
- {name=name1;
- salary=salary1;
-	 
- }
- //3.with returntype and no arguments
- double getSalary()
- {
-	 return salary;
- }
- String getName()
- {
-	 return name;
- }
- 
- double addition() {
-	 int x=100,y=200;
-	return x+y; 
- }
- 
+String name;
+double Salary;
+Employee()//default
+{//Initialise object
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter name and Salary");
+	name=sc.next();
+	Salary=sc.nextDouble();
+}
+Employee(String name,double salary)
+{//Initialise object
+	this.name=name;
+	Salary=salary;
+	
+}
+
+void display()
+{
+	System.out.println("name="+name+" Salary="+Salary);//instance
+}
 	public static void main(String[] args) {
+		//Employee ob1=new Employee();//default
+		Employee ob2=new Employee();//default
+       Employee ob3=new Employee("Snehali",80000);
 		
-			Employee e1=new Employee();
-			e1.setData("xyz",10000);
-			//System.out.println(e1.name);
-			String name1=e1.getName();
-			System.out.println("Name="+name1);
-			
-			double salary1=e1.getSalary();
-			System.out.println("salary="+salary1);
-			
-			System.out.println("Result="+e1.addition());
-			
+		//ob1.display();
+        //ob2.display();
+        ob3.display();
+        
+       
 	}
 
 }
